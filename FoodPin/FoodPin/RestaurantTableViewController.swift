@@ -92,10 +92,27 @@ class RestaurantTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationController?.hidesBarsOnSwipe = true
         
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        navigationController?.hidesBarsOnSwipe = true
+        
+    }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRestaurantDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow{
+                let destinationController = segue.destination as! RestaurantDetailViewController
+                destinationController.restaurant = restaurants[indexPath.row]
+            }
+        }
+    }
 }
 
 
@@ -184,55 +201,34 @@ extension RestaurantTableViewController {
 //TableView Delegate
 extension RestaurantTableViewController{
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
-        let cancelAction = UIAlertAction(title: "Canel", style: .cancel, handler: nil)
-        optionMenu.addAction(cancelAction)
-        
-        let callActionHandler = { (action:UIAlertAction!) -> Void in
-            
-            let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, the call feature is not available yet. Please retry later.", preferredStyle: .alert)
-            alertMessage.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            self.present(alertMessage, animated: true, completion: nil)
-            
-        }
-        let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)", style: .default, handler: callActionHandler)
-        optionMenu.addAction(callAction)
-        
-        let checkInAction = UIAlertAction(title: "Check in", style: .default, handler:{
-            (action:UIAlertAction!) ->Void in
-            let cell = tableView.cellForRow(at: indexPath)
-            cell?.accessoryType = .checkmark
-            self.restaurants[indexPath.row].isVisited = true
-        })
-        optionMenu.addAction(checkInAction)
-        
-        present(optionMenu,animated: true,completion: nil)
-        
-        tableView.deselectRow(at: indexPath, animated: false)
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        
+//        let optionMenu = UIAlertController(title: nil, message: "What do you want to do?", preferredStyle: .actionSheet)
+//        let cancelAction = UIAlertAction(title: "Canel", style: .cancel, handler: nil)
+//        optionMenu.addAction(cancelAction)
+//        
+//        let callActionHandler = { (action:UIAlertAction!) -> Void in
+//            
+//            let alertMessage = UIAlertController(title: "Service Unavailable", message: "Sorry, the call feature is not available yet. Please retry later.", preferredStyle: .alert)
+//            alertMessage.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+//            self.present(alertMessage, animated: true, completion: nil)
+//            
+//        }
+//        let callAction = UIAlertAction(title: "Call " + "123-000-\(indexPath.row)", style: .default, handler: callActionHandler)
+//        optionMenu.addAction(callAction)
+//        
+//        let checkInAction = UIAlertAction(title: "Check in", style: .default, handler:{
+//            (action:UIAlertAction!) ->Void in
+//            let cell = tableView.cellForRow(at: indexPath)
+//            cell?.accessoryType = .checkmark
+//            self.restaurants[indexPath.row].isVisited = true
+//        })
+//        optionMenu.addAction(checkInAction)
+//        
+//        present(optionMenu,animated: true,completion: nil)
+//        
+//        tableView.deselectRow(at: indexPath, animated: false)
+//    }
+//    
     
 }
