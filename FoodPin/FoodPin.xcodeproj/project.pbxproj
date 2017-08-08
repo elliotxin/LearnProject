@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		034E5BA81F38CEC400966E08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E5BA71F38CEC400966E08 /* AppDelegate.swift */; };
-		034E5BAA1F38CEC400966E08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E5BA91F38CEC400966E08 /* ViewController.swift */; };
+		034E5BAA1F38CEC400966E08 /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034E5BA91F38CEC400966E08 /* RestaurantTableViewController.swift */; };
 		034E5BAD1F38CEC400966E08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034E5BAB1F38CEC400966E08 /* Main.storyboard */; };
 		034E5BAF1F38CEC400966E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 034E5BAE1F38CEC400966E08 /* Assets.xcassets */; };
 		034E5BB21F38CEC400966E08 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 034E5BB01F38CEC400966E08 /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		034E5BA41F38CEC400966E08 /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		034E5BA71F38CEC400966E08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		034E5BA91F38CEC400966E08 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		034E5BA91F38CEC400966E08 /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
 		034E5BAC1F38CEC400966E08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		034E5BAE1F38CEC400966E08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		034E5BB11F38CEC400966E08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,14 +54,46 @@
 		034E5BA61F38CEC400966E08 /* FoodPin */ = {
 			isa = PBXGroup;
 			children = (
-				034E5BA71F38CEC400966E08 /* AppDelegate.swift */,
-				034E5BA91F38CEC400966E08 /* ViewController.swift */,
+				03867FF71F3990B8007594B5 /* Model */,
+				03867FF81F3990C7007594B5 /* View */,
+				03867FF91F3990D8007594B5 /* Controller */,
+				03867FFA1F3990EF007594B5 /* Others */,
+			);
+			path = FoodPin;
+			sourceTree = "<group>";
+		};
+		03867FF71F3990B8007594B5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		03867FF81F3990C7007594B5 /* View */ = {
+			isa = PBXGroup;
+			children = (
 				034E5BAB1F38CEC400966E08 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		03867FF91F3990D8007594B5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				034E5BA91F38CEC400966E08 /* RestaurantTableViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		03867FFA1F3990EF007594B5 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				034E5BA71F38CEC400966E08 /* AppDelegate.swift */,
 				034E5BAE1F38CEC400966E08 /* Assets.xcassets */,
 				034E5BB01F38CEC400966E08 /* LaunchScreen.storyboard */,
 				034E5BB31F38CEC400966E08 /* Info.plist */,
 			);
-			path = FoodPin;
+			name = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				034E5BAA1F38CEC400966E08 /* ViewController.swift in Sources */,
+				034E5BAA1F38CEC400966E08 /* RestaurantTableViewController.swift in Sources */,
 				034E5BA81F38CEC400966E08 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +334,7 @@
 				034E5BB81F38CEC400966E08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
