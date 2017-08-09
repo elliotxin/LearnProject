@@ -96,6 +96,9 @@ class RestaurantTableViewController: UITableViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationController?.hidesBarsOnSwipe = true
         
+        tableView.estimatedRowHeight = 36
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -141,6 +144,8 @@ extension RestaurantTableViewController {
         cell.thumbnailImageView.image = UIImage(named: restaurants[indexPath.row].image)
         cell.thumbnailImageView.layer.cornerRadius = 30.0
         cell.thumbnailImageView.clipsToBounds = true
+        cell.locationLabel.text = restaurants[indexPath.row].location
+        cell.typeLabel.text = restaurants[indexPath.row].type
         
         cell.accessoryType = restaurants[indexPath.row].isVisited ? .checkmark : .none
         
