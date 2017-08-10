@@ -16,6 +16,7 @@
 		035E4EAC1F39ADFC00FA45E2 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035E4EAB1F39ADFC00FA45E2 /* Restaurant.swift */; };
 		035E4EAE1F39F02C00FA45E2 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 035E4EAD1F39F02C00FA45E2 /* RestaurantDetailViewController.swift */; };
 		03A917431F3A2CE500957506 /* RestaurantDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A917421F3A2CE500957506 /* RestaurantDetailTableViewCell.swift */; };
+		03D6EF451F3B7A48008386DF /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D6EF441F3B7A48008386DF /* ReviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		035E4EAB1F39ADFC00FA45E2 /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		035E4EAD1F39F02C00FA45E2 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		03A917421F3A2CE500957506 /* RestaurantDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTableViewCell.swift; sourceTree = "<group>"; };
+		03D6EF441F3B7A48008386DF /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				034E5BA91F38CEC400966E08 /* RestaurantTableViewController.swift */,
 				035E4EAD1F39F02C00FA45E2 /* RestaurantDetailViewController.swift */,
+				03D6EF441F3B7A48008386DF /* ReviewViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			files = (
 				035E4EAC1F39ADFC00FA45E2 /* Restaurant.swift in Sources */,
 				034E5BAA1F38CEC400966E08 /* RestaurantTableViewController.swift in Sources */,
+				03D6EF451F3B7A48008386DF /* ReviewViewController.swift in Sources */,
 				035E4EAE1F39F02C00FA45E2 /* RestaurantDetailViewController.swift in Sources */,
 				03A917431F3A2CE500957506 /* RestaurantDetailTableViewCell.swift in Sources */,
 				035E4EAA1F399E4900FA45E2 /* RestaurantTableViewCell.swift in Sources */,
