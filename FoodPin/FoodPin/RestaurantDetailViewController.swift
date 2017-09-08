@@ -15,12 +15,12 @@ class RestaurantDetailViewController: UIViewController {
     @IBOutlet var tableView:UITableView!
     @IBOutlet var mapView: MKMapView!
     
-    var restaurant:Restaurant!
+    var restaurant:RestaurantMO!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        restaurantImageView.image = UIImage(named:restaurant.image)
+        restaurantImageView.image = UIImage(data:restaurant.image! as Data)
 
         tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
         tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
@@ -32,7 +32,7 @@ class RestaurantDetailViewController: UIViewController {
         mapView.addGestureRecognizer(tapGestureRecognizer)
         
         let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(restaurant.location, completionHandler: {
+        geoCoder.geocodeAddressString(restaurant.location!, completionHandler: {
         placemarks, error in
             if error != nil{
                 print(error!)
@@ -84,6 +84,10 @@ class RestaurantDetailViewController: UIViewController {
             }
         }
         
+        if let appDelegate = (UIApplication.shared.delegate as? AppDelegate) {
+            appDelegate.saveContext()
+        }
+        
         tableView.reloadData()
     }
     
@@ -122,7 +126,7 @@ extension RestaurantDetailViewController :UITableViewDataSource{
             cell.valueLabel.text = restaurant.phone
         case 4:
             cell.fieldLabel.text = "Been here"
-            cell.valueLabel.text = (restaurant.isVisited) ? "Yes, I've been here before. \(restaurant.rating)" : "No"
+            cell.valueLabel.text = (restaurant.isVisited) ? "Yes, I've been here before. \(restaurant.rating!)" : "No"
         default:
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""
